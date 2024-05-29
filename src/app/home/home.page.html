@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Bienvenido, {{ username }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Bienvenido, {{ username }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item class="animated-inputs">
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item class="animated-inputs">
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input [(ngModel)]="apellido"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Tipo de lector</ion-label>
+    <ion-select [(ngModel)]="tipo_lector">
+      <ion-select-option value="Primaria">Ocio</ion-select-option>
+      <ion-select-option value="Enseñanza-media">Autodidacta</ion-select-option>
+      <ion-select-option value="Universidad">Lector Empedernido</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+  <button mat-raised-button (click)="limpiarCampos()" class="custom-button" style="width: 100%;">
+    Limpiar
+  </button>
+  <button mat-raised-button (click)="mostrarInformacion()" class="custom-button" style="width: 100%;">
+    Mostrar
+  </button>
+  <button mat-raised-button (click)="volverInicio()" class="custom-button" style="width: 100%;">
+    Volver a inicio
+  </button>
+
+
+
+
