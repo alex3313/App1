@@ -13,9 +13,13 @@
         <p>{{ item.precio | currency }}</p>
         <p>Cantidad: {{ item.cantidad }}</p>
       </ion-label>
-      <ion-button (click)="quitarDelCarrito(item)">Quitar</ion-button>
+      <ion-button (click)="quitarDelCarrito(item)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
+
+
 </ion-content>
 
 <div style="display: flex; flex-direction: column; align-items: center;">

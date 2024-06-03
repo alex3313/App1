@@ -18,9 +18,11 @@
       <ion-input name="password" [(ngModel)]="user.password" required minlength="4" maxlength="4"
         type="password"></ion-input>
     </ion-item>
-    <button mat-raised-button type="submit" [disabled]="!loginForm.valid" color="primary" class="custom-button" style="width: 100%;">
+    <button mat-raised-button type="submit" [disabled]="!loginForm.valid" color="green" class="custom-button" style="width: 100%;">
+      
       Ingresar
     </button>
+    
   </form>
 </ion-content>
 

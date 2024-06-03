@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
+import { CarritoService } from '../carrito.service';
 
 @Component({
   selector: 'app-inicio',
@@ -8,40 +9,32 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 export class InicioPage {
 
-  carrito: any[] = [];
   user: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private carritoService: CarritoService) {
     const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras.state?.['user']) {
       this.user = navigation.extras.state['user'];
-      localStorage.setItem('currentUser', JSON.stringify(this.user));
-      const storedCart = localStorage.getItem(`carrito_${this.user.username}`);
-      if (storedCart) {
-        this.carrito = JSON.parse(storedCart);
-      }
     }
   }
 
-   ngOnInit() {}
-
   irAlCatalogo() {
     const navigationExtras: NavigationExtras = {
-      state: { carrito: this.carrito, user: this.user }
+      state: { user: this.user }
     };
     this.router.navigate(['/catalogo'], navigationExtras);
   }
 
   irAlCarrito() {
     const navigationExtras: NavigationExtras = {
-      state: { carrito: this.carrito, user: this.user }
+      state: { user: this.user }
     };
     this.router.navigate(['/cart'], navigationExtras);
-
   }
+
   irAmicuenta() {
     const navigationExtras: NavigationExtras = {
-      state: { carrito: this.carrito, user: this.user }
+      state: { user: this.user }
     };
     this.router.navigate(['/home'], navigationExtras);
   }

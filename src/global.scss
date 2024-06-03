@@ -40,7 +40,10 @@
     --dark-brown: #3e2723;
   }
   
-  /* Aplica el color de fondo café oscuro a ion-content */
+  /* Aplica el color de fondo  oscuro a ion-content */
   ion-content {
-    --ion-background-color: var(--dark-brown);
+    --ion-background-color: #f2f2f2; /* Color de fondo gris claro */
+    
+    --ion-color-primary: #004d40; /* Color de título verde oscuro */
   }
+
